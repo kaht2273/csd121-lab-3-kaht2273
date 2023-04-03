@@ -6,3 +6,6 @@ Write an algorithm to decide which commute is cheaper.
 
 Your answer in pseudocode below:
 
+
+
+
