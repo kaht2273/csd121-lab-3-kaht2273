@@ -5,8 +5,9 @@ You assume the cost of gas at $4 per gallon, and car maintenance at 5 cents per 
 Write an algorithm to decide which commute is cheaper.
 
 Your answer in pseudocode below:
-car cost=((distance to work/(flue efficiency)*4 +(distance to work)*0.05)
-if car cost < train ticket price then take car
+car_cost = ((distance to work / flue efficiency * $4 per gallon) + (distance to work * $0.05 maintenance cost per mile))
+set train_ticket_price known cost
+if car_cost < train_ticket_price then take car
 else take train
 
 

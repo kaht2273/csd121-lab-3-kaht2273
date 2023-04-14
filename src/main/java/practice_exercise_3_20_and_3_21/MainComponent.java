@@ -14,16 +14,9 @@ public class MainComponent extends JComponent {
         {
             Graphics2D g2 = (Graphics2D) g;
 
-
-            House House1 = new House(10, 10);
-            int x = getWidth() -500;
-            int y = getHeight() -130;
-            House House3 = new House(x,y);
-
-
-            House House2 = new House(x, y);
-
-
+            House House1 = new House(10, 10, 1);
+            House House2 = new House(10, 200, 2);
+            House House3 = new House(200,200, 3);
 
             House1.draw(g2);
             House2.draw(g2);
