@@ -9,12 +9,16 @@ package programming_project_3_13;
 //			(Hint: Use Math.max(actual transaction count, free transaction count) in your computation.)
 //			Produce a test program that verifies that the fees are calculated correctly over several months."
 /**
-   A bank account has a balance that can be changed by 
+   A bank account has a balance that can be changed by
    deposits and withdrawals.
 */
 public class BankAccount
 {  
    private double balance;
+   private double fee = 0;
+   private double count = 0;
+
+
 
    /**
       Constructs a bank account with a zero balance.
@@ -23,7 +27,26 @@ public class BankAccount
    {   
       balance = 0;
    }
-
+   public void deductMonthlyCharge()
+   {
+     if (count >= 10)
+      {
+         balance = balance - (count-10) * fee;
+      }
+      count = 0;
+   }
+   /**
+    Set the transaction fee amount for deposits and withrawals.
+    @param transactionFee the initial balance
+    */
+   public void SetTransactionFee(double transactionFee)
+   {
+      fee = transactionFee;
+   }
+   public void setTrasactionCount(double transactionCount)
+   {
+      count = transactionCount ;
+   }
    /**
       Constructs a bank account with a given balance.
       @param initialBalance the initial balance
@@ -36,19 +59,23 @@ public class BankAccount
    /**
       Deposits money into the bank account.
       @param amount the amount to deposit
+      Charges a transaction fee for the deposit.
    */
    public void deposit(double amount)
    {  
       balance = balance + amount;
+      count ++;
    }
 
    /**
       Withdraws money from the bank account.
-      @param amount the amount to withdraw
+      @param amount the amount to withdrawl
+      Charges a transaction fee for the withdraw.
    */
    public void withdraw(double amount)
    {   
-      balance = balance - amount;
+      balance = balance - amount ;
+      count ++;
    }
 
    /**
